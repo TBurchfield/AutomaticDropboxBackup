@@ -1,0 +1,33 @@
+#!/bin/bash
+#A simple script that auto-compresses the Doug user directory and writes it to
+
+echo "Running weekly updates..."
+
+#First move Week 1 to Week 2
+echo "Pushing back old data..."
+cp $HOME/Dropbox/Backups/Week1/* $HOME/Dropbox/Backups/Week2/*
+
+#now update the week 1 archives 1 directory at a time
+echo "Storing this week's data..."
+
+#Documents
+echo "Backing up Documents..."
+7z u $HOME/Dropbox/Backups/Week1/docs.7z $HOME/Documents
+
+#Music
+echo "Backing up Music..."
+7z u $HOME/Dropbox/Backups/Week1/mus.7z
+#RAR is occaisionally used for superior MP3 performance... but it is no significant difference on a machine with little to no music
+
+#Pictures
+echo "Backing up Pictures..."
+7z u $HOME/Dropbox/Backups/Week1/pics.7z
+
+#Videos
+echo "Backing up Videos..."
+7z u $HOME/Dropbox/Backups/Week1/vids.7z
+
+#Programs
+##Maybe this isn't necessary...############################
+#"Backing up user-identified programs..."
+#7z u $HOME/Dropbox/Backups/Week1/progs.7z
