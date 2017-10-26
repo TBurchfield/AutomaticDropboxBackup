@@ -2,6 +2,8 @@ This folder contains two elements that will save your entire file system
     1. A bash script that 7-zips the salient folders in your home directory(feel free to extend this to other app formatting files or shrink it as you see fit)
     2. A copy of the /etc/anacrontab file that calls this update on a weekly basis
 
+`update` defaults to Dropbox, but can be used with keybase's [kbfs](https://keybase.io/docs/kbfs) with the `update --keybase USERNAME` option.
+
 Requirements:
     Installation of 7z
     Installation of cron/anacron
